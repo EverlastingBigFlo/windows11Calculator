@@ -1,0 +1,110 @@
+@import './partials/variables';
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+main{
+    height: 100vh;
+    background: linear-gradient(to right, $var_gradient1 , $var_gradient2, $var_gradient3);
+    // padding: 2rem 0;
+    .calWrapper{
+        background-color: $var_calcBg;
+
+        // inputField
+        .container{
+            .operatorInputt{
+                font-size: 1rem;
+                background-color: $var_calcBg;
+            }
+            .inputField{
+                font-size: 3rem;
+                background-color: $var_calcBg;
+            }
+        }
+
+        // mcMrArea
+            .mcArea{
+                color: $var_mcColor ;
+            }
+
+//         // operatorArea
+
+        .operatorArea{ 
+                        .num{
+                            background-color: $var_btnBg;
+                            font-size: 1rem;
+                            border: 1px solid black;
+
+                        }
+                    
+                        .numbers{
+                            background-color: $var_mcColor;
+
+                        }
+                        .equals{
+                            background-color: $var_equalsColor;
+                        }
+            .num:hover{
+                background-color: $var_gradient1;
+            }
+        }
+        
+    }
+}
+
+
+// @media (max-width:1920px){
+//     main{
+//         height: 100vh;
+//     }
+// }
+// @media (max-width:10px){
+//     table{
+//         tr{
+//             display: flex;
+//             // gap: 1rem;
+//             padding: .1rem .7rem;
+//             td{
+//                 .btn{
+//                     background-color: $var_btnBg;
+//                     font-size: .9rem;
+//                     border: 2px solid black;
+//                     padding: 1.4rem 2.8rem;
+//                 }
+//                 .percE{
+//                     padding: 1.4rem 2.7rem;
+//                 }
+//                 .backSpace{
+//                     padding: 1.4rem 2.6rem;
+//                 }
+                
+//                 .oneX{
+//                     padding: 1.4rem 2.4rem;
+//                 }
+//                 .twoX{
+//                     padding: 1.4rem 2.3rem;
+//                 }
+//                 .threeX{
+//                     padding: 1.4rem 2.2rem;
+//                 }
+
+//                 .fullStop{
+//                     padding: 1.4rem 2.9rem;
+//                 }
+
+//                 .numbers{
+//                     background-color: $var_mcColor;
+//                 }
+//                 .equals{
+//                     background-color: $var_equalsColor;
+//                 }
+//             }
+//         }
+//     }
+// }

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+</head>
+<body>
+
+    <main class="d-flex justify-content-center align-items-center">
+        <div class="calWrapper col-sm-10 col-md-6 col-lg-3 p-2 border-2 border border-secondary">
+            <!-- header -->
+            <header>
+                <nav>
+                    <div class=" d-flex justify-content-between py-2 container">
+                    <div class="d-flex justify-content-around gap-2 ">
+                        <i class="bi bi-calculator text-secondary"></i>
+                        <p class="text-white align-items-center fw-light">Calculator</p>
+                    </div>
+                    <div class="d-flex gap-4">
+                        <i class="text-white bi bi-dash"></i>
+                        <i class="text-white bi bi-square"></i>
+                        <i class="text-white bi bi-x"></i>
+                    </div>
+                </div>
+                </nav>
+            </header>
+
+            <!-- secondHeader -->
+            <header>
+                <nav>
+                    <div class=" d-flex justify-content-between container">
+                    <div class="d-flex justify-content-around gap-2 align-items-center">
+                        <i class="bi bi-list text-white fs-5"></i>
+                        <span class="text-white fs-6 me-3">Standard</span>
+                        <i class="bi bi-box-arrow-in-up-right text-white fs-5"></i>
+                    </div>
+                    <div class="d-flex gap-4">
+                        <i class="bi bi-arrow-counterclockwise text-white fs-5"></i>
+                    </div>
+                </div>
+                </nav>
+            </header>
+
+            <!--inputField -->
+            <div class="container">
+                    <!-- <h1 class="inputField text-white py-5 d-flex justify-content-end" id="inputArea">0</h1> -->
+
+                    <input type="text" class="border-0 text-end operatorInputt text-secondary pt-4 w-100" id="operatorInput" >
+
+                    <input type="text" class="border-0 text-end inputField text-white text-white w-100" id="inputArea" value="0">
+            </div>
+
+            <!-- mcMrArea -->
+    
+            <div class="container mcArea d-flex justify-content-around py-3">
+                <span>MC</span>
+                <span>MR</span>
+                <span class="text-white">M+</span>
+                <span class="text-white">M-</span>
+                <span class="text-white">MS</span>
+                <span>M^</span>
+            </div>
+
+            <!-- operatorArea -->
+                <div>
+                    <div class="operatorArea row1 d-flex justify-content-between align-items-center ">
+                        <button class="p-3 text-white num col-3 rounded" onclick="percentage('%')" id="percent">%</button>
+                        <button onclick="clearBig('CE')" class="p-3 text-white num col-3 rounded " >CE</button>
+                        <button onclick="clearDefault('c')" class="p-3 text-white num col-3 rounded " >C</button>
+                        <button onclick="cutDefault('')" class="p-3 text-white num col-3 rounded " ><i class="bi bi-backspace"></i></button>
+                    </div>
+
+                    <div class="operatorArea row1 d-flex justify-content-between text-align-center ">
+                        <button class="p-3  num col-3 rounded text-white" onclick="anyValue('1/x')">1/x</button>
+                        <button class="p-3  num col-3 rounded text-white" onclick="Root('x2')" >x2</button>
+                        <button class="p-3  num col-3 rounded text-white " id="squareee" onclick="squreRoot('2√x')">2√x</button>
+                        <button onclick="calcu('/')"class="p-3  num col-3 rounded text-white"> ÷</button>
+                    </div>
+
+                    <div class="operatorArea row1 d-flex justify-content-between text-align-center ">
+                        <button onclick="displayText (7)" class="p-3 text-white num col-3 numbers rounded num" >7</button>
+                        <button  onclick="displayText (8)"  class="p-3 text-white num col-3 numbers rounded num" >8</button>
+                        <button onclick="displayText (9)"  class="p-3 text-white num col-3 numbers rounded num" >9</button>
+                        <button onclick="calcu('x')" id="operator" class="p-3 text-white num col-3 rounded " >x</button>
+                    </div>
+
+                    <div class="operatorArea row1 d-flex justify-content-between text-align-center ">
+                        <button onclick="displayText (4)" class="p-3 text-white num col-3 numbers rounded num" >4</button>
+                        <button  onclick="displayText (5)" class="p-3 text-white num col-3 numbers rounded num" >5</button>
+                        <button onclick="displayText (6)" class="p-3 text-white num col-3 numbers rounded num" >6</button>
+                        <button onclick="calcu('-')" class="p-3  num col-3 text-white rounded " >-</button>
+                    </div>
+
+                    <div class="operatorArea row1 d-flex justify-content-between text-align-center ">
+                        <button onclick="displayText (1)" class="p-3 text-white num col-3 numbers rounded num" >1</button>
+                        <button  onclick="displayText (2)" class="p-3 text-white num col-3 numbers rounded num" >2</button>
+                        <button onclick="displayText (3)" class="p-3 text-white num col-3 numbers rounded num" >3</button>
+                        <button onclick="calcu('+')" class="p-3 text-white num col-3 rounded " >+</button>
+                    </div>
+
+                    <div class="operatorArea row1 d-flex justify-content-between text-align-center ">
+                        <button onclick="plusOrMinus ()" class="p-3 text-white num col-3 numbers rounded num" >±</button>
+                        <button onclick="displayText (0)" class="p-3 text-white num col-3 numbers rounded num" >0</button>
+                        <button onclick="displayText ('.')" class="p-3 text-white num col-3 numbers rounded num" >.</button>
+                        <button onclick="operate('=')" class="p-3 text-white num col-3 rounded equals" >=</button>
+                    </div>
+                </div>
+
+
+                <!-- <div class="pt-2">
+                    <div class="operatorArea">
+                        <table>
+                            <tr>
+                                <td>
+                                    <button class="btn rounded text-white percE">%</button>
+                                </td>
+                                <td>
+                                    <button onclick="clearBig('CE')" class="btn rounded text-white oneX">CE</button>
+                                </td>
+                                <td>
+                                    <button onclick="clearDefault('c')" class="btn rounded text-white">C</button>
+
+                                </td>
+                                <td>
+                                    <button onclick="cutDefault('')" class="btn rounded text-white backSpace"><i class="bi bi-backspace"></i></button>
+
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="operatorArea">
+                        <table>
+                            <tr>
+                                <td>
+                                        <button class="btn rounded text-white oneX">1/x</button>
+                                </td>
+                                <td>
+                                        <button class="btn rounded text-white percE">x2</button>
+
+                                </td>
+                                <td>
+                                    <button class="btn rounded text-white threeX">2√x</button>
+
+                                </td>
+                                <td>
+                                    <button id="calcOperator" onclick="calcu('/')" class="btn rounded text-white">÷</button>
+
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="operatorArea">
+                        <table>
+                            <tr>
+                                <td>
+                                    <button onclick="displayText(7)" class="btn rounded text-white numbers">7</button>
+
+                                </td>
+                                <td>
+                                    <button onclick="displayText(8)" class="btn rounded text-white numbers">8</button>
+
+                                </td>
+                                <td>
+                                    <button onclick="displayText(9)" class="btn rounded text-white numbers">9</button>
+
+                                </td>
+                                <td>
+                                    <button id="calcOperator" onclick="calcu('x')" class="btn rounded text-white ">x</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="operatorArea">
+                        <table>
+                            <tr>
+                                <td>
+                                    <button onclick="displayText(4)" class="btn rounded text-white numbers">4</button>
+                                </td>
+                                <td>
+                                    <button onclick="displayText(5)" class="btn rounded text-white numbers">5</button>
+                                </td>
+                                <td>
+                                    <button onclick="displayText(6)" class="btn rounded text-white numbers">6</button>
+                                </td>
+                                <td>
+                                    <button id="calcOperator" onclick="calcu('-')" class="btn rounded text-white ">-</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="operatorArea">
+                        <table>
+                            <tr>
+                                <td>
+                                    <button onclick="displayText(1)" class="btn rounded text-white numbers">1</button>
+                                </td>
+                                <td>
+                                    <button onclick="displayText(2)" class="btn rounded text-white numbers">2</button>
+                                </td>
+                                <td>
+                                    <button onclick="displayText(3)" class="btn rounded text-white numbers">3</button>
+                                </td>
+                                <td>
+                                    <button id="calcOperator" onclick="calcu('+')" class="btn rounded text-white">+</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="operatorArea">
+                        <table>
+                            <tr>
+                                <td>
+                                    <button onclick="displayText()" class="btn rounded text-white numbers oneX">+/-</button>
+                                </td>
+                                <td>
+                                    <button onclick="displayText(0)" class="btn rounded text-white numbers">0</button>
+                                </td>
+                                <td>
+                                    <button onclick="displayText('.')" class="btn rounded text-white numbers fullStop">.</button>
+                                </td>
+                                <td>
+                                    <button onclick="operate('=')" class="btn rounded text-white equals">=</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div> -->
+        </div>
+    </main>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+<script src="style.js"></script>
+</html>

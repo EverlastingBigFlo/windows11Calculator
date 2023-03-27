@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  height: 100vh;
+  background: linear-gradient(to right, #01a3f4, #0288e4, #0644c0);
+}
+main .calWrapper {
+  background-color: #202020;
+}
+main .calWrapper .container .operatorInputt {
+  font-size: 1rem;
+  background-color: #202020;
+}
+main .calWrapper .container .inputField {
+  font-size: 3rem;
+  background-color: #202020;
+}
+main .calWrapper .mcArea {
+  color: #565656;
+}
+main .calWrapper .operatorArea .num {
+  background-color: #323232;
+  font-size: 1rem;
+  border: 1px solid black;
+}
+main .calWrapper .operatorArea .numbers {
+  background-color: #565656;
+}
+main .calWrapper .operatorArea .equals {
+  background-color: #76b9ed;
+}
+main .calWrapper .operatorArea .num:hover {
+  background-color: #01a3f4;
+}
