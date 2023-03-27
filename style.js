@@ -85,7 +85,7 @@ let answer;
    }
 
 
-   // inputBig.value=answer;
+   inputBig.value=answer;
 
    // inputSmall.value=inputBig.value+'=';
    // inputSmall.value += b + '=';
