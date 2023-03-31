@@ -1,8 +1,9 @@
 let inputBig=document.getElementById('inputArea');
 let inputSmall=document.getElementById('operatorInput');
+let calcu = document.getElementById('calcu');
 let operator='';
 let opera="";
-let canClear=false
+let canClear=false;
 let a;
 let b;
 
@@ -16,8 +17,10 @@ function clearDefault(){
    inputSmall.value='';
 
    // clearAll
+   calcu = '';
    a='';
    b='';
+   opera = '';
 }
 
 // clearBig
@@ -32,8 +35,9 @@ function cutDefault(){
    inputBig.value=cut.substring(0, cut.length-1);
 }
 
-// to make figures show on big screen
+// to make figures show on big input box screen
 function displayText(figures){
+
    if (canClear){
       canClear=false;
       inputBig.value='';
@@ -49,9 +53,9 @@ function displayText(figures){
 
 
 
-// to display on small screen
+// to display operation on small input box
 
-function calcu(small){
+function multiplicate(small){
    inputSmall.value+=inputBig.value + small;
 
    if (operator){
@@ -66,48 +70,66 @@ function calcu(small){
 }
 
 
-
+// to perform the calculation operations
 
 function operate(){
-let answer;
+   let answer; 
+ 
+
    if  (operator == '+'){
-      answer= Number (a) + Number (b);
+      answer = Number (a) + Number (inputBig.value);
    }
 
     else if (operator == '-'){
-      answer= Number (a) - Number (b);
+      answer = Number (a) - Number (inputBig.value);
    }
    else if (operator == 'x'){
-      answer= Number (a) * Number (b);
+      answer = Number (a) * Number (inputBig.value);
    }
    else if (operator == '/'){
-      answer= Number (a) / Number (b);
+      answer = Number (a) / Number (inputBig.value);
    }
 
 
    inputBig.value=answer;
+   operator = '';
+   // inputSmall.value =inputBig.value + '';
+   // inputBig.value =inputBig.value + '';
+   // inputSmall.value = b + '=';
+}
 
-   // inputSmall.value=inputBig.value+'=';
-   // inputSmall.value += b + '=';
+
+// to carry out the squreroot operation
+
+function squre(){
+   let squreRoot= Math.sqrt(b);
+   inputBig.value=squreRoot;
 }
-function percentage(){
-   inputBig.value=b/100;
-   // inputSmall.value += b + '%'+ '=';
-   
-}
-function anyValue(){
-   inputBig.value= 1 / b;
-}
+
+// to carry out the root operation
+
 
 function Root(){
    inputBig.value=a * b;
 
 }
 
-function squreRoot(){
-   let squreRoot= Math.sqrt(b);
-   inputBig.value=squreRoot;
+// to carry out the percentage operation
+
+function percentage(){
+   inputBig.value=b/100;
+   // inputSmall.value += b + '%'+ '=';
+   
 }
+
+// to carry out the anyvalue operation
+
+function anyValue(){
+   inputBig.value= 1 / b;
+}
+
+// to carry out the plus or minus operation
+
 function plusOrMinus(){
    inputBig.value = -1 * b;
 }

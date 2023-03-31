@@ -6,7 +6,9 @@
 
 main {
   height: 100vh;
-  background: linear-gradient(to right, #01a3f4, #0288e4, #0644c0);
+  background-image: url(https://img.freepik.com/free-photo/black-office-business-equipment-black-background_1387-807.jpg?size=626&ext=jpg&ga=GA1.2.1023542374.1680303405&semt=ais);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 main .calWrapper {
   background-color: #202020;
