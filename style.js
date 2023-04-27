@@ -1,5 +1,6 @@
 let inputBig=document.getElementById('inputArea');
-let inputSmall=document.getElementById('operatorInput');
+let inputSmall =document.getElementById('operatorInput');
+
 let calcu = document.getElementById('calcu');
 let operator='';
 let opera="";
@@ -92,7 +93,7 @@ function operate(){
 
 
    inputBig.value=answer;
-   operator = '';
+   // operator = '';
    // inputSmall.value =inputBig.value + '';
    // inputBig.value =inputBig.value + '';
    // inputSmall.value = b + '=';
